@@ -631,6 +631,31 @@ document.getElementById("btnNextSlide").addEventListener("click", nextSlide);
 document.getElementById("btnPrevSlide").addEventListener("click", prevSlide);
  
 // ─────────────────────────────────────────────
+// Validar contraseña
+// ─────────────────────────────────────────────
+const CORRECT_PASSWORD = "padipudi007";
+
+function validatePassword(event) {
+  event.preventDefault();
+  
+  const passwordInput = document.getElementById("passwordInput");
+  const errorMsg = document.getElementById("passwordError");
+  const password = passwordInput.value.trim();
+  
+  if (password === CORRECT_PASSWORD) {
+    errorMsg.classList.add("hidden");
+    // Pasar a pantalla de introducción
+    showScreen("screenIntroduction");
+    passwordInput.value = "";
+  } else {
+    errorMsg.textContent = "❌ Contraseña incorrecta. Intenta de nuevo.";
+    errorMsg.classList.remove("hidden");
+    passwordInput.value = "";
+    passwordInput.focus();
+  }
+}
+
+// ─────────────────────────────────────────────
 // Event Listeners
 // ─────────────────────────────────────────────
  
@@ -639,11 +664,18 @@ document.addEventListener("keydown", e => {
   const letter = e.key.toUpperCase();
   if (/^[A-ZÑ]$/.test(letter)) handleGuess(letter);
 });
- 
-// Botón START
-document.getElementById("btnStart").addEventListener("click", () => {
+
+// Botones de la pantalla de introducción
+document.getElementById("btnStartGame").addEventListener("click", () => {
   currentStation = 0;
   startStation(0);
+});
+
+document.getElementById("btnViewMemories").addEventListener("click", () => {
+  initCarousel();
+  document.querySelectorAll(".bnav-item").forEach(b => b.classList.remove("bnav-item--active"));
+  document.querySelectorAll(".bnav-item")[1].classList.add("bnav-item--active");
+  showScreen("screenMemories");
 });
  
 // Botón SIGUIENTE ESTACIÓN
@@ -661,7 +693,12 @@ document.getElementById("btnRetry").addEventListener("click", () => {
 // Botón RESTART
 document.getElementById("btnRestart").addEventListener("click", () => {
   currentStation = 0;
+  document.querySelectorAll(".bnav-item").forEach(b => b.classList.remove("bnav-item--active"));
+  document.querySelectorAll(".bnav-item")[0].classList.add("bnav-item--active");
+  // Volver a pantalla de contraseña
   showScreen("screenIntro");
+  document.getElementById("passwordInput").value = "";
+  document.getElementById("passwordError").classList.add("hidden");
 });
 
 // Botones del carrusel
@@ -673,7 +710,10 @@ const bnav = document.querySelectorAll(".bnav-item");
 bnav[0].addEventListener("click", () => {
   document.querySelectorAll(".bnav-item").forEach(b => b.classList.remove("bnav-item--active"));
   bnav[0].classList.add("bnav-item--active");
+  // Siempre volver a pantalla de contraseña para seguridad
   showScreen("screenIntro");
+  document.getElementById("passwordInput").value = "";
+  document.getElementById("passwordError").classList.add("hidden");
 });
 
 bnav[1].addEventListener("click", () => {

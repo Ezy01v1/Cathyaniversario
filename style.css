@@ -1488,6 +1488,170 @@ body {
 }
 
 /* ═══════════════════════════════════════════════
+   FORMULARIO DE CONTRASEÑA — PANTALLA INTRO
+   ═══════════════════════════════════════════════ */
+.password-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.password-group {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+  width: 100%;
+  justify-content: center;
+}
+
+.password-input {
+  width: 100%;
+  padding: 12px 14px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  border: 2px solid var(--clr-primary);
+  border-radius: 4px;
+  background-color: var(--clr-surface-white);
+  color: var(--clr-on-surf);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+
+.password-input:focus {
+  outline: none;
+  border-color: var(--clr-secondary);
+  box-shadow: 0 0 0 3px rgba(182, 0, 89, 0.1);
+}
+
+.password-input::placeholder {
+  color: var(--clr-outline-var);
+}
+
+.password-group .btn-pixel {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 0.65rem;
+  box-shadow: 4px 4px 0 0 #3f001a;
+}
+
+.password-error {
+  color: var(--clr-red-px);
+  font-family: var(--font-pixel);
+  font-size: 0.5rem;
+  text-align: center;
+  letter-spacing: 0.5px;
+  animation: shake 0.4s ease-in-out;
+  margin-top: 4px;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  50% { transform: translateX(6px); }
+  75% { transform: translateX(-6px); }
+}
+
+.password-error.hidden {
+  display: none;
+}
+
+/* ═══════════════════════════════════════════════
+   PANTALLA DE INTRODUCCIÓN
+   ═══════════════════════════════════════════════ */
+#screenIntroduction {
+  align-items: center;
+}
+
+.intro-card {
+  position: relative;
+  background-color: var(--clr-surface-white);
+  border: 4px solid var(--clr-primary);
+  box-shadow: var(--shadow-card);
+  max-width: 520px;
+  width: 100%;
+  padding: 40px 32px;
+  text-align: center;
+  animation: popIn 0.5s cubic-bezier(.36,.07,.19,.97) both;
+  overflow: visible;
+}
+
+.intro-header {
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px dashed var(--clr-pink-mid);
+}
+
+.intro-title {
+  font-family: var(--font-pixel);
+  font-size: 0.95rem;
+  color: var(--clr-secondary);
+  text-shadow: 2px 2px 0 var(--clr-pink-deep);
+  line-height: 1.7;
+  letter-spacing: 1px;
+}
+
+.intro-content {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.intro-text {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--clr-on-surf-var);
+  line-height: 1.75;
+  text-align: center;
+}
+
+.intro-text.italic {
+  font-style: italic;
+  color: var(--clr-pink-deep);
+  font-size: 0.85rem;
+  margin-top: 8px;
+}
+
+.intro-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn-intro-game,
+.btn-intro-memories {
+  width: 100%;
+  padding: 16px 22px;
+  font-size: 0.65rem;
+  box-shadow: 6px 6px 0 0 #3f001a;
+}
+
+.btn-intro-memories {
+  background-color: var(--clr-primary);
+  border-color: #3f001a;
+  box-shadow: 6px 6px 0 0 #3f001a;
+}
+
+.btn-intro-memories:hover {
+  background-color: var(--clr-pink-hot);
+  box-shadow: 6px 8px 0 0 #3f001a;
+}
+
+.btn-intro-memories:active {
+  box-shadow: 1px 1px 0 0 #3f001a;
+}
+
+/* ═══════════════════════════════════════════════
+   UTILITY CLASS — HIDDEN
+   ═══════════════════════════════════════════════ */
+.hidden {
+  display: none !important;
+}
+
+/* ═══════════════════════════════════════════════
    TRANSICIÓN DE PANTALLAS
    ═══════════════════════════════════════════════ */
 .screen-enter {
@@ -1510,6 +1674,59 @@ body {
 /* ═══════════════════════════════════════════════
    RESPONSIVE — móviles pequeños
    ═══════════════════════════════════════════════ */
+@media (max-width: 480px) {
+  .letter-card,
+  .intro-card {
+    padding: 28px 20px;
+    border: 3px solid var(--clr-primary);
+    margin: 0 12px;
+  }
+
+  .password-form {
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .password-group {
+    gap: 6px;
+  }
+
+  .password-input {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+
+  .password-group .btn-pixel {
+    padding: 12px 14px;
+    font-size: 0.6rem;
+    box-shadow: 3px 3px 0 0 #3f001a;
+  }
+
+  .password-error {
+    font-size: 0.45rem;
+  }
+
+  .hearts-row {
+    font-size: 0.45rem;
+  }
+
+  .letter-title,
+  .intro-title {
+    font-size: 0.85rem;
+  }
+
+  .intro-text {
+    font-size: 0.85rem;
+  }
+
+  .btn-intro-game,
+  .btn-intro-memories {
+    padding: 12px 16px;
+    font-size: 0.6rem;
+    box-shadow: 4px 4px 0 0 #3f001a;
+  }
+}
+
 @media (max-width: 400px) {
   .letter-title       { font-size: 0.85rem; }
   .topnav-brand       { font-size: 0.75rem; }
@@ -1519,4 +1736,14 @@ body {
   .reward-emoji       { font-size: 3rem; }
   .gameover-title     { font-size: 1.1rem; }
   .final-title        { font-size: 0.9rem; }
+  
+  .letter-card,
+  .intro-card {
+    padding: 24px 16px;
+  }
+
+  .password-input {
+    padding: 9px 10px;
+    font-size: 0.85rem;
+  }
 }

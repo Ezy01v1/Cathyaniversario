@@ -153,10 +153,23 @@
 
         <p class="hearts-row">¿Listo para la aventura?</p>
 
-        <button id="btnStart" class="btn-pixel btn-start" type="button">
-          <span class="material-symbols-outlined btn-icon">favorite</span>
-          ABRIR CORAZÓN
-        </button>
+        <form id="passwordForm" class="password-form" onsubmit="validatePassword(event)">
+          <div class="password-group">
+            <input 
+              type="password" 
+              id="passwordInput" 
+              class="password-input" 
+              placeholder="Ingresa la contraseña" 
+              required
+              autocomplete="off"
+            />
+            <button type="submit" class="btn-pixel btn-start">
+              <span class="material-symbols-outlined btn-icon">favorite</span>
+              CONTINUAR
+            </button>
+          </div>
+          <div id="passwordError" class="password-error hidden"></div>
+        </form>
       </div>
 
       <div class="ribbon ribbon-bottom"></div>
@@ -165,7 +178,48 @@
   </section>
 
   <!-- ══════════════════════════════════
-       PANTALLA 2: JUEGO — AHORCADO
+       PANTALLA 2: INTRODUCCIÓN
+       ══════════════════════════════════ -->
+  <section id="screenIntroduction" class="screen">
+    <div class="intro-card">
+      <div class="intro-header">
+        <h2 class="intro-title">Te quiero, cielito 💕</h2>
+      </div>
+
+      <div class="intro-content">
+        <p class="intro-text">
+          Este pequeño viaje que preparé es para que celebremos juntos todos los momentos que hemos compartido.
+        </p>
+        
+        <p class="intro-text">
+          A lo largo de este año hemos construido algo hermoso. Cada día contigo es un regalo.
+        </p>
+        
+        <p class="intro-text">
+          Te invito a resolver unos pequeños acertijos para desbloquear los corazones de nuestro amor, 
+          y al final te espera una sorpresa especial.
+        </p>
+
+        <p class="intro-text italic">
+          "El amor no está en las palabras, está en los hechos y los momentos compartidos."
+        </p>
+      </div>
+
+      <div class="intro-buttons">
+        <button id="btnStartGame" class="btn-pixel btn-intro-game" type="button">
+          <span class="material-symbols-outlined btn-icon">sports_esports</span>
+          COMENZAR JUEGO
+        </button>
+        <button id="btnViewMemories" class="btn-pixel btn-intro-memories" type="button">
+          <span class="material-symbols-outlined btn-icon">photo_library</span>
+          VER MEMORIES
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       PANTALLA 3: JUEGO — AHORCADO
        ══════════════════════════════════ -->
   <section id="screenGame" class="screen">
 
@@ -206,7 +260,7 @@
   </section>
 
   <!-- ══════════════════════════════════
-       PANTALLA 3: RECOMPENSA
+       PANTALLA 4: RECOMPENSA
        ══════════════════════════════════ -->
   <section id="screenReward" class="screen">
     <div class="reward-card">
@@ -247,7 +301,7 @@
   </section>
 
   <!-- ══════════════════════════════════
-       PANTALLA 4: FINAL
+       PANTALLA 5: FINAL
        ══════════════════════════════════ -->
   <section id="screenFinal" class="screen">
     <div class="final-card">
@@ -281,7 +335,7 @@
   </section>
 
   <!-- ══════════════════════════════════
-       PANTALLA 5: GAME OVER
+       PANTALLA 6: GAME OVER
        ══════════════════════════════════ -->
   <section id="screenGameOver" class="screen">
     <div class="gameover-card">
@@ -302,7 +356,7 @@
   </section>
 
 <!-- ══════════════════════════════════
-     PANTALLA 6: MEMORIES — CARRUSEL
+     PANTALLA 7: MEMORIES — CARRUSEL
      ══════════════════════════════════ -->
 <section id="screenMemories" class="screen">
   <div class="mem-card">

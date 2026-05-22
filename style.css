@@ -143,9 +143,9 @@ body {
   to   { transform: translateY(-115vh) rotate(25deg); opacity: 0; }
 }
 
-/* ═══════════════════════════════════════════════
+/* 
    TOP NAV BAR
-   ═══════════════════════════════════════════════ */
+   
 .topnav {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -157,13 +157,12 @@ body {
   padding: 0 20px;
   max-width: var(--container-max);
   margin: 0 auto;
-  /* hace que la barra centrada funcione */
+  /* hace que la barra centrada funcione 
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
   background: transparent;
-}
-
+} 
 .topnav-brand {
   font-family: var(--font-pixel);
   font-size: 1rem;
@@ -187,7 +186,7 @@ body {
 }
 
 .nav-icon:hover         { transform: scale(1.15); }
-.nav-icon--active       { color: var(--clr-secondary); font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+.nav-icon--active       { color: var(--clr-secondary); font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; } */
 
 /* ═══════════════════════════════════════════════
    PANTALLAS (screens)

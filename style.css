@@ -244,21 +244,305 @@ body {
 .ribbon-top    { top: 0;    border-bottom: 2px dashed var(--clr-pink-deep); }
 .ribbon-bottom { bottom: 0; border-top:    2px dashed var(--clr-pink-deep); }
 
-/* Corazones en esquinas */
-.corner-heart {
+/* Decoraciones en esquinas y bordes */
+.deco-corner {
   position: absolute;
-  font-size: 1.6rem;
-  color: var(--clr-secondary);
-  background-color: var(--clr-surface-white);
-  padding: 2px;
-  line-height: 1;
-  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-  animation: heartbeat 1.5s ease-in-out infinite;
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  z-index: 5;
+  /* animation: bounce 2s ease-in-out infinite; */
 }
-.corner-tl { top: -12px;    left: -12px; }
-.corner-tr { top: -12px;    right: -12px; }
-.corner-bl { bottom: -12px; left: -12px; }
-.corner-br { bottom: -12px; right: -12px; }
+
+.deco-tl { top: -25px;    left: -25px;  --base: rotate(360deg); transform: var(--base); }
+.deco-tr { top: -25px;    right: -25px; --base: rotate(-360deg) scaleX(-1); transform: var(--base); }
+.deco-bl { bottom: -25px; left: -25px;  --base: rotate(-180deg) scaleX(-1); transform: var(--base); }
+.deco-br { bottom: -25px; right: -25px; --base: rotate(180deg); transform: var(--base); }
+
+/* Decoraciones en los bordes */
+.deco-side {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  z-index: 3;
+  animation: float 3s ease-in-out infinite;
+}
+
+.deco-top-l { top: -22px;    left: 40%;  --base: translateX(-50%) rotate(-20deg); transform: var(--base); }
+.deco-top-r { top: -22px;    right: 40%; --base: translateX(50%) rotate(20deg) scaleX(-1); transform: var(--base); }
+.deco-bot-l { bottom: -22px; left: 40%;  --base: translateX(-50%) rotate(20deg) scaleX(-1); transform: var(--base); }
+.deco-bot-r { bottom: -22px; right: 40%; --base: translateX(50%) rotate(-20deg); transform: var(--base); }
+
+/* Flores decorativas */
+.deco-flower {
+  position: absolute;
+  object-fit: contain;
+  z-index: 4;
+}
+
+.deco-flower-top {
+  top: -50px;
+  height: 75px;
+  width: 75px;
+}
+
+.deco-ft1 { left: 8%; --base: rotate(-25deg); transform: var(--base); }
+.deco-ft2 { left: 28%; --base: rotate(-15deg); transform: var(--base); }
+.deco-ft3 { left: 50%; --base: translateX(-50%) rotate(0deg); transform: var(--base); }
+.deco-ft4 { right: 28%; --base: rotate(15deg); transform: var(--base); }
+.deco-ft5 { right: 8%; --base: rotate(25deg); transform: var(--base); }
+
+.deco-flower-bottom {
+  bottom: -60px;
+  height: 75px;
+  width: 75px;
+}
+
+.deco-fb1 { left: 8%; --base: rotate(20deg); transform: var(--base); }
+.deco-fb2 { left: 28%; --base: rotate(10deg); transform: var(--base); }
+.deco-fb3 { left: 50%; --base: translateX(-50%) rotate(-15deg); transform: var(--base); }
+.deco-fb4 { right: 28%; --base: rotate(-10deg); transform: var(--base); }
+.deco-fb5 { right: 8%; --base: rotate(-20deg); transform: var(--base); }
+
+.deco-flower-left {
+  left: -35px;
+  height: 75px;
+  width: 75px;
+}
+
+.deco-fl1 {
+  top: 10%;
+  --base: translateY(-50%) rotate(-30deg);
+  transform: var(--base);
+}
+
+.deco-fl2 {
+  top: 20%;
+  --base: translateY(-50%) rotate(20deg);
+  transform: var(--base);
+}
+
+.deco-fl3 {
+  top: 30%;
+  --base: translateY(-50%) rotate(-25deg);
+  transform: var(--base);
+}
+
+.deco-fl4 {
+  top: 40%;
+  --base: translateY(-50%) rotate(25deg);
+  transform: var(--base);
+}
+
+.deco-fl5 {
+  top: 50%;
+  --base: translateY(-50%) rotate(-30deg);
+  transform: var(--base);
+}
+
+.deco-fl6 {
+  top: 60%;
+  --base: translateY(-50%) rotate(30deg);
+  transform: var(--base);
+}
+
+.deco-fl7 {
+  top: 70%;
+  --base: translateY(-50%) rotate(-20deg);
+  transform: var(--base);
+}
+
+.deco-fl8 {
+  top: 80%;
+  --base: translateY(-50%) rotate(25deg);
+  transform: var(--base);
+}
+
+.deco-fl9 {
+  top: 85%;
+  --base: translateY(-50%) rotate(-25deg);
+  transform: var(--base);
+}
+
+  .deco-fl10 {
+    top: 90%;
+    --base: translateY(-50%) rotate(30deg);
+    transform: var(--base);
+  }
+
+.deco-fl11 {
+  top: 95%;
+  --base: translateY(-50%) rotate(-30deg);
+  transform: var(--base);
+}
+
+.deco-fl12 {
+  top: 85%;
+  --base: translateY(-50%) rotate(-30deg);
+  transform: var(--base);
+}
+
+.deco-fl13 {
+  top: 75%;
+  --base: translateY(-50%) rotate(-30deg);
+  transform: var(--base);
+}
+.deco-fl14 {
+  top: 65%;
+  --base: translateY(-50%) rotate(-30deg);
+  transform: var(--base);
+}
+.deco-fl15 {
+  top: 55%;
+  --base: translateY(-50%) rotate(-30deg);
+  transform: var(--base);
+}
+.deco-fl16 {
+  top: 45%;
+  --base: translateY(-50%) rotate(-30deg);
+  transform: var(--base);
+}
+.deco-fl17 {
+  top: 35%;
+  --base: translateY(-50%) rotate(-30deg);
+  transform: var(--base);
+}
+.deco-fl18 {
+  top: 25%;
+  --base: translateY(-70%) rotate(-30deg);
+  transform: var(--base);
+}
+.deco-fl19 {
+  top: 15%;
+  --base: translateY(-50%) rotate(-30deg);
+  transform: var(--base);
+}
+.deco-fl20 {
+  top: 5%;
+  --base: translateY(-50%) rotate(-30deg);
+  transform: var(--base);
+}
+
+
+.deco-flower-right {
+  right: -35px;
+  height: 75px;
+  width: 75px;
+}
+
+.deco-fr1 {
+  top: 10%;
+  --base: translateY(-50%) rotate(30deg) scaleX(-1);
+  transform: var(--base);
+}
+
+.deco-fr2 {
+  top: 15%;
+  --base: translateY(-50%) rotate(-20deg) scaleX(-1);
+  transform: var(--base);
+}
+
+.deco-fr3 {
+  top: 50%;
+  --base: translateY(-50%) rotate(25deg) scaleX(-1);
+  transform: var(--base);
+}
+
+.deco-fr4 {
+  top: 70%;
+  --base: translateY(-50%) rotate(-25deg) scaleX(-1);
+  transform: var(--base);
+}
+
+.deco-fr5 {
+  top: 90%;
+  --base: translateY(-50%) rotate(30deg) scaleX(-1);
+  transform: var(--base);
+}
+
+.deco-fr6 {
+  top: 25%;
+  --base: translateY(-50%) rotate(20deg) scaleX(-1);
+  transform: var(--base);
+}
+
+.deco-fr7 {
+  top: 35%;
+  --base: translateY(-50%) rotate(-30deg) scaleX(-1);
+  transform: var(--base);
+}
+
+.deco-fr8 {
+  top: 45%;
+  --base: translateY(-50%) rotate(25deg) scaleX(-1);
+  transform: var(--base);
+}
+
+.deco-fr9 {
+  top: 55%;
+  --base: translateY(-50%) rotate(-20deg) scaleX(-1);
+  transform: var(--base);
+}
+
+.deco-fr10 {
+  top: 60%;
+  --base: translateY(-50%) rotate(30deg) scaleX(-1);
+  transform: var(--base);
+}
+
+.deco-fr11 {
+  top: 65%;
+  --base: translateY(-50%) rotate(-25deg) scaleX(-1);
+  transform: var(--base);
+}
+
+.deco-fr12 {
+  top: 70%;
+  --base: translateY(-50%) rotate(20deg) scaleX(-1);
+  transform: var(--base);
+}
+
+.deco-fr13 {
+  top: 75%;
+  --base: translateY(-50%) rotate(-30deg) scaleX(-1);
+  transform: var(--base);
+}
+
+.deco-fr14 {
+  top: 80%;
+  --base: translateY(-50%) rotate(25deg) scaleX(-1);
+  transform: var(--base);
+}
+
+.deco-fr15 {
+  top: 85%;
+  --base: translateY(-50%) rotate(-20deg) scaleX(-1);
+  transform: var(--base);
+}
+
+.deco-fr16 {
+  top: 95%;
+  --base: translateY(-50%) rotate(30deg) scaleX(-1);
+  transform: var(--base);
+}
+
+.deco-fr17 {
+  top: 5%;
+  --base: translateY(-50%) rotate(-25deg) scaleX(-1);
+  transform: var(--base);
+}
+
+.deco-fr18 {
+  top: 20%;
+  --base: translateY(-50%) rotate(25deg) scaleX(-1);
+  transform: var(--base);
+}
+ 
+@keyframes float {
+  0%, 100% { transform: var(--base) translateY(0); }
+  50%       { transform: var(--base) translateY(-8px); }
+}
 
 @keyframes heartbeat {
   0%, 100% { transform: scale(1); }
@@ -275,10 +559,13 @@ body {
 }
 
 .letter-main-heart {
-  font-size: 4rem;
-  color: var(--clr-secondary);
-  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;
-  animation: heartbeat 1.2s ease-in-out infinite;
+  width: 120px;
+  height: 120px;
+  display: block;
+  object-fit: contain;
+  border-radius: 8px;
+  
+  box-shadow: 0 4px 12px rgba(198, 55, 94, 0.2);
 }
 
 .letter-title {

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HeartQuest — Pixel Love Hunt</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Material Symbols -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════
+       FONDO GLOBAL: imagen + corazones
+       ══════════════════════════════════ -->
+  <div class="bg-scene" aria-hidden="true">
+    <img
+      class="bg-image"
+      src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPWn6iqP_GsgM-II0uhWSxl1RQdCciSko82t7eM-or4sGffi5Qwg27XqWwhhfd7WQ_Uk6V0uV5YTparlff1XxnDq1fQFrW_sZV1MA47HimK0-KIysjZboUr0UyHoDquyh7NLt0gdGt4xKsI4E7m1AgwYWuf2DE73IFyVh7SeLbFgRqMwLDK5niUTKx-MTfIROSgjy4E6yCT7FYNc_wJNqy2RURS5935WEE8TYpEiRVITlTouaajd1eKvPAhcnrTJ2lINjGb0QDvys"
+      alt=""
+    />
+    <span class="deco-heart dh1 material-symbols-outlined">favorite</span>
+    <span class="deco-heart dh2 material-symbols-outlined">favorite</span>
+    <span class="deco-heart dh3 material-symbols-outlined">favorite</span>
+    <span class="deco-heart dh4 material-symbols-outlined">favorite</span>
+  </div>
+
+  <!-- Corazones flotantes dinámicos -->
+  <div id="heartsBg" class="hearts-bg" aria-hidden="true"></div>
+
+  <!-- ══════════════════════════════════
+       TOP NAV BAR
+       ══════════════════════════════════ -->
+  <nav class="topnav">
+    
+    <div class="topnav-icons">
+      <span class="material-symbols-outlined nav-icon nav-icon--active">favorite</span>
+      <span class="material-symbols-outlined nav-icon">music_note</span>
+      <span class="material-symbols-outlined nav-icon">help</span>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════
+       PANTALLA 1: INTRO — CARTA
+       ══════════════════════════════════ -->
+  <section id="screenIntro" class="screen active">
+
+    <div class="letter-card">
+      <span class="corner-heart corner-tl material-symbols-outlined">favorite</span>
+      <span class="corner-heart corner-tr material-symbols-outlined">favorite</span>
+      <span class="corner-heart corner-bl material-symbols-outlined">favorite</span>
+      <span class="corner-heart corner-br material-symbols-outlined">favorite</span>
+
+      <div class="ribbon ribbon-top"></div>
+
+      <div class="letter-inner">
+        <span class="letter-main-heart material-symbols-outlined">favorite</span>
+
+        <h1 class="letter-title">FELIZ ANIVERSARIO</h1>
+
+        <div class="letter-body">
+          <p class="letter-greeting">Querido Amorcito...</p>
+          <p class="letter-text">
+            Mirar atrás y ver todo lo que hemos construido juntos llena mi corazón de orgullo. No celebramos solo el tiempo que ha pasado.
+            Celebramos cada obstáculo superado, cada risa compartida, y cada día que elegimos crecer juntos.
+          </p>
+          <p class="letter-text">
+            Por una vida entera siguiendo el mismo camino. Te amo hoy más que ayer. 💌
+          </p>
+          <p class="letter-signature">— Att: CR
+          </p>
+        </div>
+
+        <p class="hearts-row">Listo para jugar?</p>
+
+        <button id="btnStart" class="btn-pixel btn-start" type="button">
+          <span class="material-symbols-outlined btn-icon">favorite</span>
+          ABRIR CORAZÓN
+        </button>
+      </div>
+
+      <div class="ribbon ribbon-bottom"></div>
+    </div>
+
+  </section>
+
+  <!-- ══════════════════════════════════
+       PANTALLA 2: JUEGO — AHORCADO
+       ══════════════════════════════════ -->
+  <section id="screenGame" class="screen">
+
+    <header class="game-header">
+      <div class="station-badge">
+        <span class="station-number" id="stationNumber">1</span>
+        <div class="station-label">
+          <span class="pixel-label">ESTACIÓN</span>
+          <span class="pixel-label"><span id="stationCurrent">1</span> DE 4</span>
+        </div>
+      </div>
+      <div class="lives-container">
+        <span class="pixel-label">VIDAS</span>
+        <div class="lives" id="livesDisplay"></div>
+      </div>
+    </header>
+
+    <div class="clue-box">
+      <span class="pixel-label">PISTA:</span>
+      <p id="clueText" class="clue-text">Cargando...</p>
+    </div>
+
+    <div id="statusMsg" class="status-msg hidden"></div>
+
+    <div class="hangman-area">
+      <canvas id="hangmanCanvas" width="200" height="220"></canvas>
+    </div>
+
+    <div id="wordDisplay" class="word-display"></div>
+
+    <div id="keyboard" class="keyboard"></div>
+
+    <div class="used-letters-box">
+      <span class="pixel-label">LETRAS USADAS:</span>
+      <div id="usedLetters" class="used-letters-display">★ ★ ★</div>
+    </div>
+
+  </section>
+
+  <!-- ══════════════════════════════════
+       PANTALLA 3: RECOMPENSA
+       ══════════════════════════════════ -->
+  <section id="screenReward" class="screen">
+    <div class="reward-card">
+
+      <p class="reward-header">¡Lo lograste!</p>
+      <span id="rewardEmoji" class="reward-emoji">💕</span>
+      <h2 id="rewardTitle" class="reward-title">Título de recompensa</h2>
+      <p id="rewardMessage" class="reward-message">Mensaje aquí</p>
+
+      <div class="location-block">
+        <p class="pixel-label">
+          <span class="material-symbols-outlined icon-sm">location_on</span>
+          SIGUIENTE UBICACIÓN:
+        </p>
+        <p id="gpsCoords" class="gps-coords">14.1001° N, 87.2069° W</p>
+        <a id="btnMaps" href="#" class="btn-pixel btn-maps" target="_blank" rel="noopener noreferrer">
+          <span class="material-symbols-outlined icon-sm">map</span>
+          ABRIR EN MAPS
+        </a>
+      </div>
+
+      <div class="photo-block">
+        <p class="pixel-label">
+          <span class="material-symbols-outlined icon-sm">search</span>
+          PISTA VISUAL:
+        </p>
+        <div id="photoFrame" class="photo-frame">
+          <span id="photoPlaceholder" class="material-symbols-outlined photo-icon">photo_camera</span>
+        </div>
+        <p id="photoDesc" class="photo-desc">Descripción de la foto</p>
+      </div>
+
+      <button id="btnNextStation" class="btn-pixel" type="button">
+        SIGUIENTE ESTACIÓN
+        <span class="material-symbols-outlined icon-sm">arrow_forward</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       PANTALLA 4: FINAL
+       ══════════════════════════════════ -->
+  <section id="screenFinal" class="screen">
+    <div class="final-card">
+      <span class="float-h fh1">💕</span>
+      <span class="float-h fh2">❤️</span>
+      <span class="float-h fh3">💖</span>
+      <span class="float-h fh4">💗</span>
+      <span class="float-h fh5">💓</span>
+
+      <div class="hearts-celebration">💕 ❤️ 💖 💗 💓</div>
+      <h2 class="final-title">¡Lo lograste!</h2>
+
+      <p id="finalMessage" class="final-message">
+        Un año lleno de momentos especiales...<br />
+        y muchos más por venir. 💕
+      </p>
+
+      <div class="final-gift">
+        <p class="pixel-label">🎁 TU REGALO FINAL:</p>
+        <p id="giftText" class="gift-message">
+          ¡Dirígete al restaurante donde tuvieron su primera cita!<br />
+          Te espera algo muy especial... 💕
+        </p>
+      </div>
+
+      <button id="btnRestart" class="btn-pixel btn-restart" type="button">
+        <span class="material-symbols-outlined icon-sm">replay</span>
+        JUGAR DE NUEVO
+      </button>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       PANTALLA 5: GAME OVER
+       ══════════════════════════════════ -->
+  <section id="screenGameOver" class="screen">
+    <div class="gameover-card">
+      <span class="gameover-skull">💀</span>
+      <h2 class="gameover-title">GAME OVER</h2>
+      <p id="gameoverMsg" class="gameover-msg">No te preocupes, ¡inténtalo de nuevo!</p>
+
+      <div class="word-reveal">
+        <span class="pixel-label">La palabra era:</span>
+        <span id="revealedWord" class="revealed-word">???</span>
+      </div>
+
+      <button id="btnRetry" class="btn-pixel btn-restart" type="button">
+        <span class="material-symbols-outlined icon-sm">replay</span>
+        REINTENTAR
+      </button>
+    </div>
+  </section>
+  
+<!-- ══════════════════════════════════
+     PANTALLA 6: MEMORIES — CARRUSEL
+     ══════════════════════════════════ -->
+<section id="screenMemories" class="screen">
+  <div class="mem-card">
+
+    <div class="mem-header">
+      <span class="mem-header-line"></span>
+      <h2 class="mem-title">Nuestros Momentos</h2>
+      <span class="mem-header-line"></span>
+    </div>
+
+    <div class="carousel-frame">
+
+      <div class="carousel-film carousel-film--top" id="filmTop"></div>
+
+      <div class="carousel-viewport">
+        <div class="carousel-track" id="carouselTrack"></div>
+      </div>
+
+      <div class="carousel-film carousel-film--bottom" id="filmBottom"></div>
+
+      <div class="carousel-nav">
+        <button class="carousel-nav-btn" id="btnPrevSlide" type="button" aria-label="Anterior">&#9664;</button>
+        <button class="carousel-nav-btn" id="btnNextSlide" type="button" aria-label="Siguiente">&#9654;</button>
+      </div>
+
+    </div>
+
+    <div class="carousel-dots" id="carouselIndicators"></div>
+
+    <p class="mem-counter">
+      <span id="currentSlide">1</span> / <span id="totalSlides">28</span>
+    </p>
+
+    <p class="mem-swipe-hint">&#9668; desliza &#9658;</p>
+
+  </div>
+</section>
+
+  <!-- ══════════════════════════════════
+       BOTTOM NAV BAR
+       ══════════════════════════════════ -->
+  <nav class="bottomnav">
+    <button class="bnav-item bnav-item--active" type="button">
+      <span class="material-symbols-outlined bnav-icon">bookmark_heart</span>
+      <span class="bnav-label">Story</span>
+    </button>
+    <button class="bnav-item" type="button">
+      <span class="material-symbols-outlined bnav-icon">photo_library</span>
+      <span class="bnav-label">Memories</span>
+    </button>
+  </nav>
+
+  <script src="game.js"></script>
+</body>
+</html>

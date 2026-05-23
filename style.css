@@ -67,7 +67,6 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   /* espacio para topnav y bottomnav */
-  padding-top: var(--nav-h);
   padding-bottom: var(--bnav-h);
 }
 
@@ -194,7 +193,7 @@ body {
 .screen {
   display: none;
   position: fixed;
-  inset: var(--nav-h) 0 var(--bnav-h) 0;
+  inset: 0 0 var(--bnav-h) 0;
   z-index: 10;
   overflow-y: auto;
   overflow-x: hidden;
@@ -221,7 +220,7 @@ body {
   box-shadow: var(--shadow-card);
   max-width: 520px;
   width: 100%;
-  padding: 40px 32px;
+  padding: 20px 16px;
   text-align: center;
   animation: popIn 0.5s cubic-bezier(.36,.07,.19,.97) both;
   overflow: visible;
@@ -550,21 +549,22 @@ body {
 
 /* Interior de la carta */
 .letter-inner {
-  padding: 18px 0 14px;
+  padding: 10px 0 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
+  gap: 8px;
 }
 
 .letter-main-heart {
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   display: block;
   object-fit: contain;
   border-radius: 8px;
   
   box-shadow: 0 4px 12px rgba(198, 55, 94, 0.2);
+  margin-bottom: 8px;
 }
 
 .letter-title {

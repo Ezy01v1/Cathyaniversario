@@ -9,12 +9,12 @@
 const STATIONS = [
   {
     id: 1,
-    word: "ENAMORADO",
-    clue: "¿Cómo te sientes cuando estás con ella? 💕",
+    word: "MAYO",
+    clue: "¿Cuál es el mes de nuestro aniversario? 📅",
     reward: {
       title: "¡Primer corazón desbloqueado! 💖",
-      emoji: "💝",
-      message: "¡Lo lograste! El amor empieza con una sola palabra...\nY tú la encontraste perfectamente. 🌙",
+      emoji: "📅",
+      message: "¡Lo lograste! Mayo... el mes en el que nuestro amor encontró su fecha especial. 🌸",
       gpsCoords: "14.1001° N, 87.2069° W",
       mapsUrl: "https://www.google.com/maps?q=14.1001,-87.2069",
       photoDesc: "📸 Busca el lugar donde todo comenzó... el café de la esquina.",
@@ -23,12 +23,12 @@ const STATIONS = [
   },
   {
     id: 2,
-    word: "MARIPOSAS",
-    clue: "¿Qué sientes en el estómago cada vez que la ves? 🦋",
+    word: "LOSJARROS",
+    clue: "¿Lugar donde fue nuestra primera cita? 📍",
     reward: {
       title: "¡Segundo corazón desbloqueado! 💗",
-      emoji: "🦋",
-      message: "Las mariposas nunca desaparecen... solo se vuelven más bonitas con el tiempo. ✨",
+      emoji: "📍",
+      message: "Los Jarros... donde todo comenzó, donde se cruzaron nuestros caminos. 💕",
       gpsCoords: "14.1020° N, 87.2050° W",
       mapsUrl: "https://www.google.com/maps?q=14.1020,-87.2050",
       photoDesc: "📸 Ve al lugar donde tuvieron su primera foto juntos.",
@@ -37,12 +37,12 @@ const STATIONS = [
   },
   {
     id: 3,
-    word: "INFINITO",
-    clue: "¿Cuánto tiempo quieres estar con ella? ∞",
+    word: "ALITAS",
+    clue: "¿Qué comida hemos compartido más veces? 🍗",
     reward: {
       title: "¡Tercer corazón desbloqueado! 💓",
-      emoji: "∞",
-      message: "Infinito. Eso es todo el tiempo que merece alguien tan especial como ella. 🌟",
+      emoji: "🍗",
+      message: "Alitas... cada una representa un momento especial compartido contigo. 😋",
       gpsCoords: "14.1050° N, 87.2030° W",
       mapsUrl: "https://www.google.com/maps?q=14.1050,-87.2030",
       photoDesc: "📸 Dirígete al lugar favorito de los dos para ver atardeceres.",
@@ -51,16 +51,30 @@ const STATIONS = [
   },
   {
     id: 4,
-    word: "ANIVERSARIO",
-    clue: "¿Qué celebramos hoy con todo el corazón? 🎉",
+    word: "ELSALVADOR",
+    clue: "¿A donde fue nuestro primer viaje? ✈️",
+    reward: {
+      title: "¡Cuarto corazón desbloqueado! 💞",
+      emoji: "✈️",
+      message: "El Salvador... nuestro primer viaje juntos, un lugar lleno de recuerdos hermosos. 🌴",
+      gpsCoords: "14.1080° N, 87.2010° W",
+      mapsUrl: "https://www.google.com/maps?q=14.1080,-87.2010",
+      photoDesc: "📸 El lugar donde creamos nuestros primeros recuerdos de aventura.",
+      // photoUrl: "foto4.jpg",
+    },
+  },
+  {
+    id: 5,
+    word: "MILLERDRAFT",
+    clue: "¿La primera cerveza que compartimos juntos? 🍺",
     reward: {
       title: "¡TODOS LOS CORAZONES! 💞",
       emoji: "🎁",
-      message: "¡Lo lograste! Un año increíble juntos, y esto es solo el comienzo.\n¡Feliz aniversario! 🥂",
-      gpsCoords: "14.1080° N, 87.2010° W",
-      mapsUrl: "https://www.google.com/maps?q=14.1080,-87.2010",
+      message: "¡Lo lograste! Miller Draft... el primer brindis de muchos más que vendrán.\n¡Feliz aniversario! 🥂",
+      gpsCoords: "14.1090° N, 87.2000° W",
+      mapsUrl: "https://www.google.com/maps?q=14.1090,-87.2000",
       photoDesc: "📸 ¡El destino final te espera con una sorpresa muy especial!",
-      // photoUrl: "foto4.jpg",
+      // photoUrl: "foto5.jpg",
     },
   },
 ];
@@ -68,7 +82,7 @@ const STATIONS = [
 // ─────────────────────────────────────────────
 // Configuración
 // ─────────────────────────────────────────────
-const MAX_ERRORS = 15;
+const MAX_ERRORS = 5;
  
 // ─────────────────────────────────────────────
 // Estado

@@ -68,13 +68,41 @@ const STATIONS = [
     word: "MILLERDRAFT",
     clue: "¿La primera cerveza que compartimos juntos? 🍺",
     reward: {
-      title: "¡TODOS LOS CORAZONES! 💞",
-      emoji: "🎁",
-      message: "¡Lo lograste! Miller Draft... el primer brindis de muchos más que vendrán.\n¡Feliz aniversario! 🥂",
+      title: "¡Quinto corazón desbloqueado! 💞",
+      emoji: "🍺",
+      message: "¡Lo lograste! Miller Draft... el primer brindis de muchos más que vendrán. 🥂",
       gpsCoords: "14.1090° N, 87.2000° W",
       mapsUrl: "https://www.google.com/maps?q=14.1090,-87.2000",
-      photoDesc: "📸 ¡El destino final te espera con una sorpresa muy especial!",
+      photoDesc: "📸 El primer brindis que compartimos.",
       // photoUrl: "foto5.jpg",
+    },
+  },
+  {
+    id: 6,
+    word: "AVENTURA",
+    clue: "¿Nuestro primer concierto? 🎵",
+    reward: {
+      title: "¡Sexto corazón desbloqueado! 💕",
+      emoji: "🎵",
+      message: "¡Lo lograste! Aventura... la música que sonaba cuando bailamos juntos por primera vez. 🎤",
+      gpsCoords: "14.1100° N, 87.1990° W",
+      mapsUrl: "https://www.google.com/maps?q=14.1100,-87.1990",
+      photoDesc: "📸 El lugar donde escuchamos a nuestro artista favorito.",
+      // photoUrl: "foto6.jpg",
+    },
+  },
+  {
+    id: 7,
+    word: "OLIMPIAMARATON",
+    clue: "¿Nuestro primer partido en vivo? ⚽",
+    reward: {
+      title: "¡Séptimo corazón desbloqueado! 💓",
+      emoji: "⚽",
+      message: "¡Lo lograste! Olimpia - Maratón... nuestro primer partido juntos, lleno de emoción y adrenalina. 🔥",
+      gpsCoords: "14.1110° N, 87.1980° W",
+      mapsUrl: "https://www.google.com/maps?q=14.1110,-87.1980",
+      photoDesc: "📸 El estadio donde vivimos la emoción del fútbol juntos.",
+      // photoUrl: "foto7.jpg",
     },
   },
 ];
@@ -647,7 +675,7 @@ document.getElementById("btnPrevSlide").addEventListener("click", prevSlide);
 // ─────────────────────────────────────────────
 // Validar contraseña
 // ─────────────────────────────────────────────
-const CORRECT_PASSWORD = "padipudi007";
+const CORRECT_PASSWORD = "benji123";
 
 function validatePassword(event) {
   event.preventDefault();

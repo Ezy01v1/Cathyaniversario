@@ -402,24 +402,25 @@ function showRewardScreen() {
   document.getElementById("rewardTitle").textContent   = reward.title;
   document.getElementById("rewardEmoji").textContent   = reward.emoji;
   document.getElementById("rewardMessage").textContent = reward.message;
-  document.getElementById("gpsCoords").textContent     = reward.gpsCoords;
-  document.getElementById("btnMaps").href              = reward.mapsUrl;
-  document.getElementById("photoDesc").textContent     = reward.photoDesc;
+  // Elementos removidos (location-block y photo-block)
+  // document.getElementById("gpsCoords").textContent     = reward.gpsCoords;
+  // document.getElementById("btnMaps").href              = reward.mapsUrl;
+  // document.getElementById("photoDesc").textContent     = reward.photoDesc;
  
   // Foto (si existe)
-  const photoFrame = document.getElementById("photoFrame");
-  photoFrame.innerHTML = "";
-  if (reward.photoUrl) {
-    const img = document.createElement("img");
-    img.src = reward.photoUrl;
-    img.alt = "Pista visual";
-    photoFrame.appendChild(img);
-  } else {
-    const icon = document.createElement("span");
-    icon.className = "material-symbols-outlined photo-icon";
-    icon.textContent = "photo_camera";
-    photoFrame.appendChild(icon);
-  }
+  // const photoFrame = document.getElementById("photoFrame");
+  // photoFrame.innerHTML = "";
+  // if (reward.photoUrl) {
+  //   const img = document.createElement("img");
+  //   img.src = reward.photoUrl;
+  //   img.alt = "Pista visual";
+  //   photoFrame.appendChild(img);
+  // } else {
+  //   const icon = document.createElement("span");
+  //   icon.className = "material-symbols-outlined photo-icon";
+  //   icon.textContent = "photo_camera";
+  //   photoFrame.appendChild(icon);
+  // }
  
   const btnNext = document.getElementById("btnNextStation");
   if (currentStation >= STATIONS.length - 1) {

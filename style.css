@@ -1052,18 +1052,22 @@ body {
 /* Corazones decorativos flotantes en la pantalla final */
 .float-h {
   position: fixed;
-  font-size: 1.8rem;
   animation: finalFloat 3s ease-in-out infinite;
-  opacity: 0.65;
+  opacity: 0.85;
   z-index: 1;
   pointer-events: none;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  border: 3px solid #ff6b9d;
 }
 
-.fh1 { left: 8%;  top: 18%; animation-delay: 0s;    font-size: 2.2rem; }
-.fh2 { right: 12%; top: 32%; animation-delay: 0.5s;  font-size: 1.5rem; }
-.fh3 { left: 18%; top: 58%; animation-delay: 1s;    font-size: 2rem;   }
-.fh4 { right: 8%;  top: 68%; animation-delay: 1.5s;  font-size: 1.6rem; }
-.fh5 { left: 48%; top: 8%;  animation-delay: 0.8s;  font-size: 2.8rem; }
+.fh1 { left: 8%;  top: 18%; animation-delay: 0s;    width: 80px; height: 80px; }
+.fh2 { right: 12%; top: 32%; animation-delay: 0.5s;  width: 60px; height: 60px; }
+.fh3 { left: 18%; top: 58%; animation-delay: 1s;    width: 75px; height: 75px; }
+.fh4 { right: 8%;  top: 68%; animation-delay: 1.5s;  width: 65px; height: 65px; }
+.fh5 { left: 48%; top: 8%;  animation-delay: 0.8s;  width: 90px; height: 90px; }
 
 @keyframes finalFloat {
   0%, 100% { transform: translateY(0) scale(1); }

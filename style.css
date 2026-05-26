@@ -698,7 +698,7 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  background: radial-gradient(ellipse at top, #ffe0ec 0%, var(--clr-pink-light) 80%);
+  background: transparent;
 }
 
 /* Header del juego */
@@ -926,7 +926,7 @@ body {
    PANTALLA 3: RECOMPENSA
    ═══════════════════════════════════════════════ */
 #screenReward {
-  background: radial-gradient(ellipse at top, #ffe0ec 0%, var(--clr-pink-light) 80%);
+  background: rgba(255, 224, 236, 0.08);
   align-items: flex-start;
   padding-top: 20px;
 }
@@ -986,14 +986,7 @@ body {
 
 .location-block,
 .photo-block {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  background-color: var(--clr-primary-fixed);
-  border: 2px solid var(--clr-outline-var);
-  padding: 14px 16px;
+  display: none;
 }
 
 .gps-coords {

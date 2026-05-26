@@ -94,7 +94,7 @@ const STATIONS = [
   {
     id: 7,
     word: "OLIMPIAMARATON",
-    clue: "¿Nuestro primer partido en vivo? ⚽",
+    clue: "¿Nuestro primer partido en vivo? (escrible sin vs o sin -) ⚽",
     reward: {
       title: "¡Séptimo corazón desbloqueado! 💓",
       emoji: "⚽",
